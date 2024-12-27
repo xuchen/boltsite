@@ -1,0 +1,43 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Transform patient interactions with AI-powered speech analytics for healthcare facilities. Get actionable insights from patient conversations." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--primary: 41, 108, 242;
+		--primary-light: 107, 155, 255;
+		--primary-dark: 25, 65, 145;
+		--accent: 0, 150, 136;
+		--text: 17, 24, 39;
+		--bg-light: 249, 250, 251;
+	}
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		background: white;
+		color: rgb(var(--text));
+	}
+	body {
+		margin: 0;
+		padding: 0;
+	}
+</style>

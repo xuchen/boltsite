@@ -1,0 +1,48 @@
+---
+const features = [
+  {
+    title: "Real-time Analytics",
+    description: "Monitor patient interactions as they happen, enabling immediate intervention when needed.",
+    icon: "📊"
+  },
+  {
+    title: "Sentiment Analysis",
+    description: "Understand patient emotions and satisfaction levels through advanced voice analysis.",
+    icon: "🎯"
+  },
+  {
+    title: "Compliance Monitoring",
+    description: "Ensure adherence to healthcare regulations and internal protocols automatically.",
+    icon: "✓"
+  },
+  {
+    title: "Custom Insights",
+    description: "Get tailored analytics specific to your healthcare facility's unique needs.",
+    icon: "💡"
+  }
+];
+---
+<section id="features" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        Features That Transform Healthcare
+      </h2>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+        Our platform provides powerful tools to enhance patient care and operational efficiency.
+      </p>
+    </div>
+
+    <div class="mt-20">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {features.map(feature => (
+          <div class="relative p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+            <div class="text-4xl mb-4">{feature.icon}</div>
+            <h3 class="text-lg font-medium text-gray-900">{feature.title}</h3>
+            <p class="mt-2 text-base text-gray-500">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

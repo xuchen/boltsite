@@ -1,0 +1,39 @@
+---
+import SolutionLayout from '../layouts/SolutionLayout.astro';
+import DemoForm from '../components/DemoForm.astro';
+
+const features = [
+  "Critical communication analysis",
+  "Response time optimization",
+  "Team coordination insights",
+  "Protocol adherence tracking",
+  "Patient handoff monitoring",
+  "Quality assurance metrics"
+];
+---
+
+<SolutionLayout 
+  title="Emergency Care Solutions" 
+  subtitle="Optimize critical communications and response times in emergency situations">
+  <div class="grid md:grid-cols-2 gap-12 my-16">
+    <div>
+      <h2 class="text-2xl font-bold mb-6">Enhance Emergency Response</h2>
+      <ul class="space-y-4">
+        {features.map(feature => (
+          <li class="flex items-start">
+            <svg class="h-6 w-6 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="ml-3">{feature}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="bg-gray-50 p-6 rounded-lg">
+      <h2 class="text-2xl font-bold mb-4">Why Choose HealthVoiceAI</h2>
+      <p class="text-gray-600 mb-4">Our emergency care solution helps you optimize critical communications and improve response times in high-pressure situations.</p>
+      <p class="text-gray-600">Monitor team coordination, ensure protocol adherence, and maintain quality standards during emergencies.</p>
+    </div>
+  </div>
+  <DemoForm />
+</SolutionLayout>

@@ -1,0 +1,24 @@
+---
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+  title: string;
+  date: string;
+}
+
+const { title, date } = Astro.props;
+---
+
+<Layout title={`${title} - HealthVoiceAI Blog`}>
+  <Header />
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+    <article class="prose lg:prose-xl">
+      <p class="text-gray-500">{date}</p>
+      <h1 class="text-4xl font-bold text-gray-900 mt-2">{title}</h1>
+      <div class="mt-8">
+        <slot />
+      </div>
+    </article>
+  </main>
+</Layout>

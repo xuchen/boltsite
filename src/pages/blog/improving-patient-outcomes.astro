@@ -1,0 +1,36 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+import { posts } from '../../data/blog-posts';
+
+const post = posts.find(p => p.slug === 'improving-patient-outcomes')!;
+---
+
+<BlogPost title={post.title} date={post.date}>
+  <div class="mb-8 flex gap-2 flex-wrap">
+    {post.tags.map(tag => (
+      <a href={`/blog?tag=${tag}`} class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full hover:bg-gray-200">
+        #{tag}
+      </a>
+    ))}
+  </div>
+
+  <p>Healthcare communication is at the heart of patient care. When providers and patients communicate effectively, it leads to better understanding, improved compliance with treatment plans, and ultimately, better health outcomes.</p>
+
+  <h2>The Impact of Communication on Patient Care</h2>
+  <p>Studies have consistently shown that effective communication between healthcare providers and patients is directly linked to:</p>
+  <ul>
+    <li>Higher patient satisfaction rates</li>
+    <li>Better adherence to treatment plans</li>
+    <li>Reduced medical errors</li>
+    <li>Improved health outcomes</li>
+  </ul>
+
+  <h2>How Speech Analytics Improves Communication</h2>
+  <p>Modern speech analytics technology provides valuable insights into patient-provider interactions, helping healthcare facilities:</p>
+  <ul>
+    <li>Identify communication patterns</li>
+    <li>Measure patient engagement</li>
+    <li>Track emotional responses</li>
+    <li>Ensure information clarity</li>
+  </ul>
+</BlogPost>

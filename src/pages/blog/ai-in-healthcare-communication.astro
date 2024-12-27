@@ -1,0 +1,36 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+import { posts } from '../../data/blog-posts';
+
+const post = posts.find(p => p.slug === 'ai-in-healthcare-communication')!;
+---
+
+<BlogPost title={post.title} date={post.date}>
+  <div class="mb-8 flex gap-2 flex-wrap">
+    {post.tags.map(tag => (
+      <a href={`/blog?tag=${tag}`} class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full hover:bg-gray-200">
+        #{tag}
+      </a>
+    ))}
+  </div>
+
+  <p>Artificial Intelligence is revolutionizing healthcare communication by providing deeper insights into patient interactions and enabling more personalized care approaches.</p>
+
+  <h2>AI-Powered Communication Analysis</h2>
+  <p>Modern AI technologies can analyze various aspects of healthcare communication:</p>
+  <ul>
+    <li>Speech patterns and tone</li>
+    <li>Emotional content</li>
+    <li>Key phrases and topics</li>
+    <li>Patient comprehension levels</li>
+  </ul>
+
+  <h2>Benefits of AI in Healthcare</h2>
+  <p>The integration of AI in healthcare communication brings numerous advantages:</p>
+  <ul>
+    <li>Real-time feedback on patient interactions</li>
+    <li>Automated documentation and analysis</li>
+    <li>Improved patient engagement tracking</li>
+    <li>Enhanced quality monitoring</li>
+  </ul>
+</BlogPost>

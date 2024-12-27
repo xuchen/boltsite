@@ -1,0 +1,51 @@
+---
+const solutions = [
+  {
+    title: "Hospitals & Clinics",
+    description: "Optimize patient interactions across departments and improve care coordination.",
+    link: "/hospitals-clinics"
+  },
+  {
+    title: "Dental Practices",
+    description: "Enhance patient communication and treatment plan acceptance.",
+    link: "/dental-practices"
+  },
+  {
+    title: "Birth Centers",
+    description: "Ensure compassionate care during crucial moments for families.",
+    link: "/birth-centers"
+  },
+  {
+    title: "Emergency Care",
+    description: "Streamline critical communications in high-pressure situations.",
+    link: "/emergency-care"
+  },
+  {
+    title: "Hospice Care",
+    description: "Maintain dignified and empathetic communication with patients and families.",
+    link: "/hospice-care"
+  },
+  {
+    title: "Veterinary Care",
+    description: "Improve pet owner communication and satisfaction.",
+    link: "/veterinary-care"
+  }
+];
+---
+<section id="solutions" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-center text-gray-900 sm:text-4xl">
+      Solutions for Every Healthcare Setting
+    </h2>
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {solutions.map(solution => (
+        <a href={solution.link} class="block">
+          <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-semibold text-gray-900">{solution.title}</h3>
+            <p class="mt-2 text-gray-500">{solution.description}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

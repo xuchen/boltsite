@@ -1,0 +1,40 @@
+---
+import SolutionsDropdown from './navigation/SolutionsDropdown.astro';
+---
+<header class="fixed w-full bg-white shadow-sm z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <div class="flex items-center">
+        <a href="/" class="text-2xl font-bold text-primary">
+          HealthVoice<span class="text-accent">AI</span>
+        </a>
+      </div>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#features" class="text-gray-600 hover:text-primary">Features</a>
+        <SolutionsDropdown />
+        <a href="/blog" class="text-gray-600 hover:text-primary">Blog</a>
+        <a href="#contact" class="text-gray-600 hover:text-primary">Contact</a>
+      </nav>
+      <div>
+        <a href="#demo" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-dark">
+          Book Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .text-primary {
+    color: rgb(var(--primary));
+  }
+  .text-accent {
+    color: rgb(var(--accent));
+  }
+  .bg-primary {
+    background-color: rgb(var(--primary));
+  }
+  .hover\:bg-primary-dark:hover {
+    background-color: rgb(var(--primary-dark));
+  }
+</style>

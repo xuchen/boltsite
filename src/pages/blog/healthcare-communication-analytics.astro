@@ -1,0 +1,36 @@
+---
+import BlogPost from '../../layouts/BlogPost.astro';
+import { posts } from '../../data/blog-posts';
+
+const post = posts.find(p => p.slug === 'healthcare-communication-analytics')!;
+---
+
+<BlogPost title={post.title} date={post.date}>
+  <div class="mb-8 flex gap-2 flex-wrap">
+    {post.tags.map(tag => (
+      <a href={`/blog?tag=${tag}`} class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full hover:bg-gray-200">
+        #{tag}
+      </a>
+    ))}
+  </div>
+
+  <p>Implementing speech analytics in healthcare requires careful planning and adherence to best practices to ensure maximum benefit and regulatory compliance.</p>
+
+  <h2>Key Implementation Strategies</h2>
+  <p>Successful implementation of healthcare communication analytics involves:</p>
+  <ul>
+    <li>Clear objectives and metrics</li>
+    <li>Staff training and buy-in</li>
+    <li>Privacy and compliance measures</li>
+    <li>Regular assessment and adjustment</li>
+  </ul>
+
+  <h2>Measuring Success</h2>
+  <p>Track these key performance indicators to evaluate your analytics program:</p>
+  <ul>
+    <li>Patient satisfaction scores</li>
+    <li>Communication efficiency metrics</li>
+    <li>Clinical outcome improvements</li>
+    <li>Staff engagement levels</li>
+  </ul>
+</BlogPost>

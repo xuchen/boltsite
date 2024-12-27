@@ -1,0 +1,31 @@
+---
+import { solutions } from '../../data/solutions';
+---
+
+<div class="relative group">
+  <button class="flex items-center text-gray-600 hover:text-primary">
+    Solutions
+    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div class="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+    <div class="py-1" role="menu">
+      {solutions.map(solution => (
+        <a
+          href={solution.link}
+          class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          role="menuitem"
+        >
+          {solution.title}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .text-primary {
+    color: rgb(var(--primary));
+  }
+</style>
